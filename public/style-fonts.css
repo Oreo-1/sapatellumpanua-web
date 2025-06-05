@@ -14,10 +14,23 @@
     src: url(assets/fonts/Quicksand_Book.otf);
 }
 
+@font-face {
+    font-family: 'Quicksand-Bold';
+    src: url(assets/fonts/Quicksand_Bold.otf);
+}
+
 .pinefolk {
     font-family: 'Pinefolk';
 }
 
+.carena-regular {
+    font-family: 'Carena_Regular';
+}
+
 .quicksand-book {
     font-family: 'Quicksand';
+}   
+
+.quicksand-bold {
+    font-family: 'Quicksand-Bold';
 }
