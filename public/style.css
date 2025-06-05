@@ -51,7 +51,38 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 200px;
+  /* padding: 200px; */
+  padding: 0 20px; /* Default padding for mobile */
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+  .hero-content {
+    padding: 200px; /* Original padding for desktop */
+  }
+}
+
+/* Responsive typography */
+.hero-content h1 {
+  font-size: 2.5rem; /* Mobile size */
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.25rem; /* Mobile size */
+  max-width: 90%; /* Prevent text from touching edges */
+}
+
+/* Desktop typography */
+@media (min-width: 992px) {
+  .hero-content h1 {
+    font-size: 3.5rem; /* Desktop size */
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem; /* Desktop size */
+    max-width: 800px; /* Optimal reading width */
+  }
 }
 
 .explore-now-btn {
