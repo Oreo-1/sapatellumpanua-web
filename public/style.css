@@ -65,6 +65,7 @@ html {
 
 .tellumpanua {
   font-size: 115px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* Media query for mobile devices */
@@ -145,22 +146,23 @@ html {
   color: #ddd !important;
 }
 
-/* about us section (first part) */
+/* about us section (first part) ausfp for short */
 /* Statistics Cards Styling */
-.ausfp {
-  color: #557b38;
+.ausfp-title {
+  color: #567a37;
 }
-.ausfp-1 {
+.ausfp-title-1 {
   margin-left: 30px;
 }
 .stats-section {
   position: relative;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 .section-title .aboutus-section {
   text-align: left;
   margin-bottom: 2rem;
   font-weight: 600;
-  color: #557b38;
+  color: #567a37;
   font-size: 2.2rem;
 }
 .stat-cards-row {
@@ -174,6 +176,11 @@ html {
   padding: 1rem;
   flex: 1;
 }
+.stat-card:hover {
+  transform: scale(1.15);
+  transition: all 0.3s ease;
+}
+
 .stat-value {
   font-size: 2.2rem;
   font-weight: bold;
@@ -248,7 +255,7 @@ html {
 }
 
 @media (max-width: 768px) {
-  .ausfp-1 {
+  .ausfp-title-1 {
     margin-left: 0px;
   }
   .content-wrapper {
@@ -331,21 +338,73 @@ html {
   z-index: 2;
   text-align: left;
   padding: 2rem;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+  /* background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.2)); */
   border-radius: 20px;
   max-width: 700px;
-  color: #333;
+  color: rgb(88, 37, 1);
 }
 
+.hero-content-roots-section h1 {
+  font-size: 50px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
 .hero-content-roots-section p {
-  font-size: 1rem;
+  font-size: 25px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .roots-wave {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+/* about us section (fourth part) */
+.find-us-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('assets/img/findusherebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start; /* Align content to top */
+}
+
+.find-us-content-overlay {
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  padding: 50px;
+  max-width: 100%;
+}
+
+.fuh {
+  color: #567a37;
+}
+
+.find-us-lead {
+  color: #567a37;
+  font-size: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .find-us-section {
+      background-position: 60% center; /* Adjust background position on mobile */
+  }
+  
+  .display-4 {
+      font-size: 2rem !important;
+      color: #567a37;
+  }
+  
+  .find-us-lead {
+      font-size: 20px !important;
+      color: #567a37;
+  }
 }
 
 /* test section */
@@ -375,7 +434,7 @@ html {
 
 /* 🦶-er section */
 .footer {
-  background-color: #557b38;
+  background-color: #567a37;
   color: white;
   padding: 40px 0;
   position: relative;
