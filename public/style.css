@@ -536,3 +536,56 @@ html {
     height: 120px;
   }
 }
+
+/* 360 page */
+.threesixty-page-bg {
+  background: url('assets/img/homeimage-1920x1080-compressed.png') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+}
+
+.threesixty-page-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  pointer-events: none; /* So it doesn’t block clicks */
+}
+
+.threesixty-title {
+  color: white;
+  font-size: 70px;
+}
+
+.threesixty-subtitle {
+  color: white;
+}
+
+.threesixty-br {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.threesixty-br:hover {
+  transform: scale(1.1); /* Slight zoom */
+  /* z-index: 2; */
+}
+
+.threesixty-top-margin {
+  margin-top: 75px;
+}
+
+@media (max-width: 768px) {
+  .threesixty-title {
+    font-size: 30px;
+  }
+
+  .threesixty-top-margin {
+    height: 50px;
+  }
+}
