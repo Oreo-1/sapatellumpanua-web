@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    // navbar logic
     const navbar = document.querySelector(".navbar");
 
     // Make navbar visible by default
@@ -20,18 +22,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById('changing-text');
 
     setInterval(() => {
-      // First make it exit
-      textElement.classList.remove('enter');
-      textElement.classList.add('exit');
+        // First make it exit
+        textElement.classList.remove('enter');
+        textElement.classList.add('exit');
 
-      // After exit, change the text and enter
-      setTimeout(() => {
-        index = (index + 1) % texts.length;
-        textElement.textContent = texts[index];
-        textElement.classList.remove('exit'); 
-        textElement.classList.add('enter'); 
-      }, 500);
+        // After exit, change the text and enter
+        setTimeout(() => {
+            index = (index + 1) % texts.length;
+            textElement.textContent = texts[index];
+            textElement.classList.remove('exit');
+            textElement.classList.add('enter');
+        }, 500);
     }, 2000);
+
+    // gallery logic
+    document.addEventListener("DOMContentLoaded", function () {
+        var grid = document.querySelector('.masonry-row'); // Your grid wrapper
+
+        // Wait until all images are loaded
+        imagesLoaded(grid, function () {
+            // Initialize Masonry after images are fully loaded
+            new Masonry(grid, {
+                itemSelector: '.masonry-item',
+                columnWidth: '.masonry-item',
+                percentPosition: true
+            });
+        });
+    });
 
     // 360 modal logic
     document.querySelectorAll(".scene-thumb").forEach((img) => {
