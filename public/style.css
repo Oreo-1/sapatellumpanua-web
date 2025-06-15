@@ -24,6 +24,10 @@ html {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.navbar-nav .nav-link.active {
+  border-bottom: 3px solid #ffffff;
+}
+
 /* Full-screen hero section */
 .landing-page {
   position: relative;
@@ -345,6 +349,42 @@ html {
   }
 }
 
+/* second part transition shize */
+.changing-text {
+  display: inline-block;
+  position: relative;
+}
+
+.changing-text.exit {
+  animation: slide-up-fade-out 0.5s ease forwards;
+}
+
+.changing-text.enter {
+  animation: slide-up-fade-in 0.5s ease forwards;
+}
+
+@keyframes slide-up-fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up-fade-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* about us section (third part) */
 .hero-roots-section {
   position: relative;
@@ -588,3 +628,59 @@ html {
     height: 50px;
   }
 }
+
+/* styles for gallery.html page */
+.gallery-h1 {
+  margin-top: 20px;
+  color: #567a37;
+}
+
+.masonry-item {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.masonry-item:hover {
+  transform: scale(1.025);
+  transition: all 0.3s ease;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.nav-pills-gallery .nav-link-gallery {
+  color: #000000;  /* black text */
+  background: none;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-pills-gallery .nav-link-gallery.active {
+  color: #567a37;  /* green text for active */
+  background: none;
+  font-weight: bold;
+}
+
+.nav-pills-gallery .nav-link-gallery.active,
+.nav-pills-gallery .nav-link-gallery.active:hover {
+  color: #567a37;
+  text-decoration: underline;
+}
+
+.nav-pills-gallery .nav-link-gallery:hover {
+  color: #405d27;
+  text-decoration: underline;
+}
+
+/* @media (max-width: 768px) {
+  .gallery-h1 {
+    font-size: medium;
+  }
+} */

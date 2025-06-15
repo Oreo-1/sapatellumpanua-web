@@ -13,6 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // change text logic
+    const texts = [' Benua', ' Dusun', ' Bukit'];
+
+    let index = 0;
+    const textElement = document.getElementById('changing-text');
+
+    setInterval(() => {
+      // First make it exit
+      textElement.classList.remove('enter');
+      textElement.classList.add('exit');
+
+      // After exit, change the text and enter
+      setTimeout(() => {
+        index = (index + 1) % texts.length;
+        textElement.textContent = texts[index];
+        textElement.classList.remove('exit'); 
+        textElement.classList.add('enter'); 
+      }, 500);
+    }, 2000);
+
     // 360 modal logic
     document.querySelectorAll(".scene-thumb").forEach((img) => {
         img.addEventListener("click", function () {
