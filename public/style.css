@@ -72,6 +72,10 @@ html {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
+.tellumpanua-sub {
+  font-size: 23px;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   /* nav shize */
@@ -85,6 +89,10 @@ html {
 
   .tellumpanua {
     font-size: 55px; /* Adjust this value as needed */
+  }
+
+  .tellumpanua-sub {
+    font-size: 20px;
   }
 
   /* You might also want to adjust the padding for mobile */
@@ -179,6 +187,12 @@ html {
   padding: 1rem;
   flex: 1;
 }
+.stat-p {
+  font-size: 40px;
+}
+.stat-pp {
+  font-size: 20px;
+}
 .stat-card:hover {
   transform: scale(1.15);
   transition: all 0.3s ease;
@@ -257,6 +271,98 @@ html {
   flex: 1;
 }
 
+/* Image container styles with fixed dimensions */
+.image-container {
+  position: relative;
+  width: 200px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure images fill their containers while maintaining aspect ratio */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the area without stretching */
+  transition: filter 0.3s ease;
+}
+
+/* Image caption styles */
+.image-caption {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  text-align: center;
+  transition: bottom 0.3s ease;
+  z-index: 5;
+}
+
+/* Hover effects */
+.image-container:hover {
+  transform: scale(1.05);
+  z-index: 4;
+}
+
+.image-container:hover .image-caption {
+  bottom: 0;
+}
+
+.image-container:hover img {
+  filter: brightness(0.7);
+}
+
+/* Adjust image stack layout */
+.image-stack {
+  display: flex;
+  gap: 20px;
+  height: 400px; /* Fixed height for the stack */
+  width: 100%;
+  justify-content: center; /* Center the images horizontally */
+  align-items: flex-start; /* Align images to the top */
+}
+
+/* Positioning for each image container */
+/* .img-1-container {
+  margin-top: 0;
+}
+
+.img-2-container {
+  margin-top: 20px;
+}
+
+.img-3-container {
+  margin-top: 40px;
+} */
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .image-stack {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+  }
+
+  .image-container {
+    width: 100%; /* Full width on mobile */
+    max-width: 350px; /* But limit maximum width */
+    height: 450px; /* Taller for better proportions */
+  }
+
+  .img-1-container,
+  .img-2-container,
+  .img-3-container {
+    transform: none;
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .ausfp-title-1 {
     margin-left: 0px;
@@ -288,11 +394,11 @@ html {
   .stat-value {
     font-size: 2rem;
   }
-  .image-stack {
+  /* .image-stack {
     height: 350px;
     width: 300px;
     margin-left: 0;
-  }
+  } */
 
   .img-1 {
     top: 0;
